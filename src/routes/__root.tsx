@@ -3,7 +3,7 @@ import { CartProvider } from "@/store/cart";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CartDrawer } from "@/components/CartDrawer";
-import { StoreEntryModal } from "@/components/StoreEntryModal";
+import { LoadingScreen } from "@/components/LoadingScreen";
 
 function NotFoundComponent() {
   return (
@@ -35,6 +35,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <CartProvider>
+      <LoadingScreen />
       <div className="flex min-h-dvh flex-col bg-background">
         <Navbar />
         <main className="flex-1">
@@ -42,7 +43,6 @@ function RootComponent() {
         </main>
         <Footer />
         <CartDrawer />
-        <StoreEntryModal />
       </div>
     </CartProvider>
   );
